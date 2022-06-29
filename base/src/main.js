@@ -5,14 +5,14 @@
  */
 import Vue from 'vue'
 import App from './App.vue'
-import { registerMicroApps , start } from 'qiankun'
-import router from './router'
+import { registerMicroApps , setDefaultMountApp , start } from 'qiankun'
+// import router from './router'
 import store from './store'
 
 Vue.config.productionTip = false
 
 new Vue({
-  router,
+  // router,
   store,
   render: h => h(App)
 }).$mount('#app')
@@ -20,7 +20,7 @@ new Vue({
 const app = [
   {
     name: 'sub-vue', // app name registered
-    entry: '//localhost:8070',
+    entry: '//localhost:8070/subapp/sub-vue',
     container: '#subapp-viewport',
     activeRule: '/sub-vue',
   },
@@ -33,4 +33,5 @@ const app = [
 ];
 
 registerMicroApps(app);
+setDefaultMountApp('/sub-vue')
 start()
