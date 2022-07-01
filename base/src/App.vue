@@ -9,7 +9,6 @@
       <router-link to="/sub-vue">sub-vue</router-link> |
       <router-link to="/about">About</router-link>
     </div>
-    <router-view />
     <div id="subapp-viewport"></div>
   </div>
 </template>
