@@ -1,9 +1,14 @@
+/*
+ * @Author: Mx
+ * @Date: 2022-07-01 23:25:47
+ * @Description: 
+ */
 const { name } = require('./package.json')
 
 module.exports = {
     publicPath:'/subapp/sub-vue',
     devServer: {
-        port: 8070,
+        port: 10000,
         headers: {
           'Access-Control-Allow-Origin': '*'
         }

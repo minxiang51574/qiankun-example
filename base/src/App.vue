@@ -7,8 +7,9 @@
   <div class="layout-wrapper">
     <div id="nav">
       <router-link to="/sub-vue">sub-vue</router-link> |
-      <router-link to="/about">About</router-link>
+      <router-link to="/sub-react">sub-react</router-link>
     </div>
+
     <div id="subapp-viewport"></div>
   </div>
 </template>

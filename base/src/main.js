@@ -20,13 +20,13 @@ new Vue({
 const app = [
   {
     name: 'sub-vue', // app name registered
-    entry: '//localhost:8070/subapp/sub-vue',
+    entry: '//localhost:10000/subapp/sub-vue',
     container: '#subapp-viewport',
     activeRule: '/sub-vue',
   },
   {
     name: 'sub-react',
-    entry: '//localhost:8090',
+    entry: '//localhost:20000/subapp/sub-react',
     container: '#subapp-viewport',
     activeRule: '/sub-react',
   },
