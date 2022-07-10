@@ -5,11 +5,10 @@
 -->
 <template>
   <div class="layout-wrapper">
-    <div id="nav">
-      <router-link to="/sub-vue">sub-vue</router-link> |
-      <router-link to="/sub-react">sub-react</router-link>
-    </div>
-
+    <el-menu :router="true" mode="horizontal">
+      <el-menu-item index="/sub-vue">vue应用</el-menu-item>
+      <el-menu-item index="/sub-react">react应用</el-menu-item>
+    </el-menu>
     <div id="subapp-viewport"></div>
   </div>
 </template>

@@ -5,19 +5,27 @@
  */
 import './public-path'
 import React from 'react';
-import ReactDOM from 'react-dom';
+// import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { createRoot } from 'react-dom/client';
 
 
 
-function render() {
-  ReactDOM.render(
-    <App />,
-    document.getElementById('root')
-  );
+// function render() {
+//   ReactDOM.render(
+//     <App />,
+//     document.getElementById('root')
+//   );
+// }
+function render(){
+  const container = document.getElementById('root');
+  const root = createRoot(container); // createRoot(container!) if you use TypeScript
+  root.render(<App />);
 }
+
+
 
 if (!window.__POWERED_BY_QIANKUN__) {
   render();
@@ -46,7 +54,7 @@ export async function mount(props) {
  * 应用每次 切出/卸载 会调用的方法，通常在这里我们会卸载微应用的应用实例
  */
 export async function unmount() {
-  ReactDOM.unmountComponentAtNode(document.getElementById('root'));
+  // ReactDOM.unmountComponentAtNode(document.getElementById('root'));
 }
 /**
  * 可选生命周期钩子，仅使用 loadMicroApp 方式加载微应用时生效
