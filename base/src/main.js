@@ -7,15 +7,14 @@ import Vue from 'vue'
 import App from './App.vue'
 import { registerMicroApps , setDefaultMountApp , start } from 'qiankun'
 import router from './router'
-import store from './store'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
+import store from "./store.js"
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 
 new Vue({
   router,
-  store,
   render: h => h(App)
 }).$mount('#app')
 
@@ -34,6 +33,16 @@ const app = [
   },
 ];
 
-registerMicroApps(app);
+// 添加下发子应用的props
+const apps = app.map(item=> {
+  return {
+    ...item,
+    props:{
+      getGlobalState: store.getGlobalState // 下发getGlobalState方法
+    }
+  }
+})
+
+registerMicroApps(apps);
 setDefaultMountApp('/sub-vue')
 start()

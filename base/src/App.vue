@@ -9,10 +9,27 @@
       <el-menu-item index="/sub-vue">vue应用</el-menu-item>
       <el-menu-item index="/sub-react">react应用</el-menu-item>
     </el-menu>
+    <div>主应用的state: {{ JSON.stringify(state) }}</div>
     <div id="subapp-viewport"></div>
   </div>
 </template>
+<script>
+import store from "@/store";
+export default {
+  data() {
+    return {};
+  },
+  computed: {
+    state() {
+      // 如果只需要取某个命名空间下的state，比如 user ，可以加上参数
+      // return store.getGlobalState('user')
 
+      // 返回所有的state则不需添加参数
+      return store.getGlobalState();
+    },
+  },
+};
+</script>
 <style lang="scss">
 #nav {
   padding: 30px;

@@ -1,7 +1,13 @@
+/*
+ * @Author: Mx
+ * @Date: 2022-07-01 23:24:47
+ * @Description: 
+ */
 import './public-path'
 import Vue from 'vue'
 import App from './App.vue'
 import routes from './router'
+import { store as commonStore } from '../../base/common'
 import store from './store'
 import VueRouter from 'vue-router'
 
@@ -43,6 +49,10 @@ export async function bootstrap () {
 export async function mount (props) {
 
   console.log('[vue] props from main framework', props)
+
+  // 注册全局方法
+  commonStore.globalRegister(store, props)
+
   render(props)
 }
 export async function unmount () {
