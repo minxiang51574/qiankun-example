@@ -25,7 +25,7 @@ function render(props = {}) {
 console.log('process.env.BASE_URL',process.env.BASE_URL);
 
   const router = new VueRouter({
-    base: window.__POWERED_BY_QIANKUN__ ? '/sub-vue/' : process.env.BASE_URL,
+    base: window.__POWERED_BY_QIANKUN__ ? '/qiankun/sub-vue/' : process.env.BASE_URL,
     mode: 'history',
     routes,
   })

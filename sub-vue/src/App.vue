@@ -42,7 +42,7 @@ export default {
     // setGlobalState 是在 base/common/global-register.js中定义的
     ...mapActions("global", ["setGlobalState"]),
     gotoSubReact() {
-      history.pushState(null, "sub-react", "/sub-react");
+      history.pushState(null, "sub-react", "/qiankun/sub-react");
     },
     /**
      * 改变全局信息

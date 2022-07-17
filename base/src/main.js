@@ -24,5 +24,5 @@ new Vue({
 const apps = microApps
 
 registerMicroApps(apps);
-setDefaultMountApp('/sub-vue')
+setDefaultMountApp('/qiankun/sub-vue')
 start()

@@ -8,13 +8,13 @@ import store from './store'
 const microApps = [
   {
     name: 'sub-vue',
-    entry: '//localhost:10000/subapp/sub-vue',
-    activeRule: '/sub-vue'
+    entry: process.env.VUE_APP_SUB_VUE,
+    activeRule: '/qiankun/sub-vue'
   },
   {
     name: 'sub-react',
-    entry: '//localhost:20000/subapp/sub-react',
-    activeRule: '/sub-react'
+    entry: process.env.VUE_APP_SUB_REACT,
+    activeRule: '/qiankun/sub-react'
   }
 ]
 const apps = microApps.map(item => {
