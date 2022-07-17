@@ -18,9 +18,10 @@
         vuex的`global module`的user state：<code> {{ JSON.stringify(user) }}</code>
       </p>
     </div>
+    <button @click="gotoSubReact">从当前子应用内跳转到`sub-react`子应用</button>
+    <button @click="openSubVue">独立打开sub-vue子应用</button>
 
     <button @click="changeUsername">改变全局信息</button>
-    <button @click="openSubVue">独立打开sub-vue子应用</button>
 
     <router-view />
   </div>
@@ -40,6 +41,9 @@ export default {
   methods: {
     // setGlobalState 是在 base/common/global-register.js中定义的
     ...mapActions("global", ["setGlobalState"]),
+    gotoSubReact() {
+      history.pushState(null, "sub-react", "/sub-react");
+    },
     /**
      * 改变全局信息
      */

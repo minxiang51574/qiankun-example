@@ -9,7 +9,8 @@ import { registerMicroApps , setDefaultMountApp , start } from 'qiankun'
 import router from './router'
 import ElementUI from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
-import store from "./store.js"
+import microApps from './micro-app'
+
 Vue.use(ElementUI)
 Vue.config.productionTip = false
 
@@ -18,30 +19,9 @@ new Vue({
   render: h => h(App)
 }).$mount('#app')
 
-const app = [
-  {
-    name: 'sub-vue', // app name registered
-    entry: '//localhost:10000/subapp/sub-vue',
-    container: '#subapp-viewport',
-    activeRule: '/sub-vue',
-  },
-  {
-    name: 'sub-react',
-    entry: '//localhost:20000/subapp/sub-react',
-    container: '#subapp-viewport',
-    activeRule: '/sub-react',
-  },
-];
 
 // 添加下发子应用的props
-const apps = app.map(item=> {
-  return {
-    ...item,
-    props:{
-      getGlobalState: store.getGlobalState // 下发getGlobalState方法
-    }
-  }
-})
+const apps = microApps
 
 registerMicroApps(apps);
 setDefaultMountApp('/sub-vue')
