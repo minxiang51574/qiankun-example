@@ -22,11 +22,9 @@ Vue.config.productionTip = false
 let instance = null
 function render(props = {}) {
   const { container } = props;
-console.log('process.env.BASE_URL',process.env.BASE_URL);
-
   const router = new VueRouter({
     base: window.__POWERED_BY_QIANKUN__ ? '/qiankun/sub-vue/' : process.env.BASE_URL,
-    mode: 'history',
+    mode: 'history', 
     routes,
   })
 

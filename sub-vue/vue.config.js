@@ -4,9 +4,11 @@
  * @Description: 
  */
 const { name } = require('./package.json')
+// 环境变量
+const ENV = process.env.NODE_ENV 
 
 module.exports = {
-    publicPath:'/qiankun/sub-vue',
+    publicPath: ENV === 'production' ? '/qiankun/':'/', 
     devServer: {
         port: 10000,
         headers: {
