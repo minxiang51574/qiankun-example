@@ -23,7 +23,7 @@ let instance = null
 function render(props = {}) {
   const { container } = props;
   const router = new VueRouter({
-    base: window.__POWERED_BY_QIANKUN__ ? '/qiankun/sub-vue/' : process.env.BASE_URL,
+    base: window.__POWERED_BY_QIANKUN__ ? '/qiankun/sub-vue' : '/qiankun',
     mode: 'history', 
     routes,
   })
