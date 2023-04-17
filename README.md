@@ -27,4 +27,20 @@ npm start
 npm run build
 ```
 
+## nginx 配置
+```js
+	location /qiankun/ {
+	    alias   /root/qiankun/main/;  # 主应用所在的目录
+	    index index.html;
+	    try_files $uri $uri/ /index.html;
+	}
+	    
+	location /subapp {
+		alias /root/qiankun/subapp/;
+		index index.html;
+	    try_files $uri $uri/ /index.html;
+	}
+```
+## 访问地址
 
+http://minxiang.site/qiankun/sub-vue

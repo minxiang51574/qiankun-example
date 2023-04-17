@@ -6,5 +6,6 @@ module.exports = {
         args[0].title = 'qiankun-example'
         return args
       })
-  }
+  },
+  publicPath: process.env.NODE_ENV === 'development' ? '/' : '/qiankun/',
 }

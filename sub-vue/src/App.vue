@@ -35,7 +35,7 @@ export default {
     // setGlobalState 是在 /common/src/store/global-register.js中定义的
     ...mapActions('global', ['setGlobalState']),
     gotoSubReact () {
-      history.pushState(null, 'sub-react', '/sub-react')
+      history.pushState(null, 'sub-react', '/qiankun/sub-react')
     },
     changeUsername () {
       // 也可通过 store.commit('global/setGlobalState', { user: '李四' }) 进行操作

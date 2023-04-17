@@ -46,5 +46,5 @@ registerMicroApps(apps, {
     }
   ]
 })
-setDefaultMountApp('/sub-vue')
+setDefaultMountApp('/qiankun/sub-vue')
 start()
